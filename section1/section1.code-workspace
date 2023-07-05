@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../section2"
+		},
+		{
+			"path": "../section3"
+		},
+		{
+			"path": "../section4"
+		},
+		{
+			"path": "../section5"
+		},
+		{
+			"path": "../section7"
+		},
+		{
+			"path": "../section8"
+		},
+		{
+			"path": "../section9"
+		},
+		{
+			"path": "../section10"
+		}
+	],
+	"settings": {}
+}

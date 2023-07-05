@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "ESNext", //변환되는 자바스크립트를 명시함
+        "module": "ESNext",
+        "outDir": "dist",
+        "strict": true,
+        "moduleDetection": "force"
+    },
+    "ts-node": {
+        "esm": true
+    },
+    "include": ["src"]
+}
