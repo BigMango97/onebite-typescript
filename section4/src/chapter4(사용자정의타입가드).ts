@@ -1,5 +1,3 @@
-import { type } from "os";
-
 /**
  * 사용자 정의 타입가드
  */
@@ -21,6 +19,8 @@ function isCat(animal: Animal): animal is Cat {
 }
 function warning(animal: Animal) {
   if (isDog(animal)) {
+    animal; // animal : Dog
   } else if (isCat(animal)) {
+    animal // animal : Cat
   }
 }
