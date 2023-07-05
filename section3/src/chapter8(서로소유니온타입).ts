@@ -1,13 +1,11 @@
 /**
- * 서로소 유니온 타입
+ * 서로소 유니온 타입 : 태그를 붙여서 객체를 완벽히 구분함
  * 교집합이 없는 타입들로만 만든 유니온 타입을 말함
+ * 두 타입 간의 공통으로 포함된 타입이 하나도 없는 경우 - 서로소 관계에 있다!
  */
-
-import { error } from "console";
-import { type } from "os";
-
+//tag가 있기때문에 Admin, Member, Guest 아무 연관없는 서로소 집합 형태로 바뀜!
 type Admin = {
-  tag: "ADMIN";
+  tag: "ADMIN"; // 스트링 리터럴 타입으로 정의되어있다!
   name: string;
   kickCount: number;
 };
@@ -21,7 +19,7 @@ type Guest = {
   name: string;
   visitCount: number;
 };
-type User = Admin | Member | Guest;
+type User = Admin | Member | Guest; //서로소 유니언타입이 된다!
 
 // Admin => {name}님 현재까지 {kickCount}명 강퇴했습니다.
 // Member => {name}님 현재까지 {point}모았습니다.
@@ -44,25 +42,9 @@ function login(user: User) {
   }
 }
 
-// function login(user: User) {
-//   if (user.tag === "ADMIN") {
-//     //admin 타입
-//     console.log(`${user.name}님 현재까지 ${user.kickCount}명 강퇴했습니다.`);
-//   } else if (user.tag === "MEMBER") {
-//     //member 타입
-//     console.log(`${user.name}님 현재까지 ${user.point}모았습니다.`);
-//   } else if (user.tag === "GUEST") {
-//     //gest 타입
-//     console.log(`${user.name}님 현재가지 ${user.visitCount}번 오셨습니다.`);
-//   }
-// }
-
-/**
- * 복습겸 한가지 더 사례
- */
+/** 복습겸 한가지 더 사례 */
 
 // 비동기 작업의 결과를 처리하는 객체
-
 type LoadingTask = {
   state: "LOADING";
 };
@@ -78,12 +60,11 @@ type SuccessTask = {
     data: string;
   };
 };
-type AsyncTask = LoadingTask | FailedTask | SuccessTask;
+type AsyncTask = LoadingTask | FailedTask | SuccessTask; //서로소 유니언 타입이다!
 
 // 로딩중 -> 콘솔에 로딩중 출력
-// 실패 -> 실패: 에러메세지 출력
+// 실패 -> 실패 : 에러메세지 출력
 // 성공 -> 성공 : 데이터를 출력
-
 function processResult(task: AsyncTask) {
   switch (task.state) {
     case "LOADING": {
@@ -100,6 +81,7 @@ function processResult(task: AsyncTask) {
     }
   }
 }
+
 const loading: AsyncTask = {
   state: "LOADING",
 };
