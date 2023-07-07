@@ -5,3 +5,5 @@
 type Color = "red" | "black" | "green";
 type Animal = "dog" | "cat" | "chicken";
 type ColorAnimal = `${Color}-${Animal}`;
+// "red-dog" | "red-cat" | "red-chicken" | "black-dog" |
+//  "black-cat" | "black-chicken" | "green-dog" | "green-cat" | "green-chicken"
